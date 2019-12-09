@@ -8,21 +8,57 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css"
     />
+    <script
+      src="https://kit.fontawesome.com/20307842d7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Results</title>
   </head>
 
   <body>
     <h1>Your intinerary</h1>
-    <p id="itinerariScelti"></p>
     <br />
+    <p id="itinerariScelti">
+      you chose to go from <a href="">Lumezzangeles</a> to <a href="">Padova</a>
+    </p>
 
     <h2>Fastest intinerary</h2>
-    <ul id="pathsList"></ul>
+    <ul id="pathsList" class="pathList">
+      <li><i class="fas fa-plane-departure"></i> Volo1</li>
+
+      <li><i class="fas fa-plane-departure"></i> Volo2</li>
+
+      <li><i class="fas fa-train"></i> Treno1</li>
+
+      <li><i class="fas fa-search-dollar"></i> Total cost: $15+18</li>
+    </ul>
     <br />
 
     <h2>You may also like these ones</h2>
-    <ul id="alternativePathsList"></ul>
+
+    <div id=""></div>
+
+    <ul id="alternativePathsList" class="pathList">
+      <li><i class="fas fa-plane-departure"></i> Volo3</li>
+
+      <li><i class="fas fa-plane-departure"></i> Volo4</li>
+
+      <li><i class="fas fa-bus"></i> bus3</li>
+
+      <li><i class="fas fa-search-dollar"></i> Total cost: $69</li>
+    </ul>
     <br />
     <hr />
+    <br />
+    <ul id="alternativePathsList" class="pathList">
+      <li><i class="fas fa-plane-departure"></i> Volo3</li>
+
+      <li><i class="fas fa-plane-departure"></i> Volo4</li>
+
+      <li><i class="fas fa-bus"></i> bus3</li>
+
+      <li><i class="fas fa-search-dollar"></i> Total cost: $420</li>
+    </ul>
   </body>
 </html>
