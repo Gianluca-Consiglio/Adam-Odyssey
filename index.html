@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css"
+    />
     <title>Adam Odyssey</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Choosen your Itinerary</h1>
-    <form action="index.php" method="POST">
-        <p>From: </p> <select name="from"> 
-            <option value="New York">New York</option>
-            <option value="Washington">Washington</option>
-            <option value="San Diego">San Diego</option>
-            <option value="Los Angeles">Los Angeles</option>
-            <option value="Portland">Portland</option>
-        </select>
-        <p>To: </p> <select name="to"> 
-            <option value="New York">New York</option>
-            <option value="Washington">Washington</option>
-            <option value="San Diego">San Diego</option>
-            <option value="Los Angeles">Los Angeles</option>
-            <option value="Portland">Portland</option>
-        </select>
-        <p>Means of transportation</p>
-        <input type="checkbox" name="means" value="bus">Bus <input type="radio" name="means" value="fastest">Fastest <br>
-        <input type="checkbox" name="means" value="train">Train <input type="radio" name="means" value="shortest">Shortest <br>
-        <input type="checkbox" name="means" value="airplane">Airplane <input type="radio" name="means" value="cheapest">Cheapest <br>
-        <input type="submit" value="Calculate">
+    <br />
+
+    <p style="display: inline;">You chose to go</p>
+
+    <form action="index.php" method="POST" style="display: inline;">
+      <p style="display: inline;">From:</p>
+      <select name="from" style="display: inline;">
+        <option value="New York">New York</option>
+        <option value="Washington">Washington</option>
+        <option value="San Diego">San Diego</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Portland">Portland</option>
+      </select>
+      <p style="display: inline; padding-left: 2em;">To:</p>
+      <select name="to" style="display: inline;">
+        <option value="New York">New York</option>
+        <option value="Washington">Washington</option>
+        <option value="San Diego">San Diego</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Portland">Portland</option>
+      </select>
+      <p>Means of transportation</p>
+      <input type="checkbox" name="means" value="bus" />Bus
+      <input type="radio" name="means" value="fastest" />Fastest <br />
+      <input type="checkbox" name="means" value="train" />Train
+      <input type="radio" name="means" value="shortest" />Shortest <br />
+      <input type="checkbox" name="means" value="airplane" />Airplane
+      <input type="radio" name="means" value="cheapest" />Cheapest <br />
+      <br />
+      <input type="submit" value="Calculate" />
     </form>
-</body>
+  </body>
 </html>
