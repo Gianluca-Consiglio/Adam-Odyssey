@@ -82,6 +82,7 @@
     $means = array();
     $cityFrom = $_POST["from"];
     $cityTo = $_POST["to"];
+    echo "<p>You chose to go from <mark class=\"tag\">$cityFrom</mark> to <mark class=\"tag\">$cityTo</mark></p>";
     if(isset($_POST["bus"]))
         $means[] = "bus";
     else
@@ -95,13 +96,13 @@
     else
         $notMeans[] = "airplane";
     if($cityFrom == $cityTo){
-        echo "<p>You have already arrived :)</p>";
+        echo "<p>You can go with your own feet, it's free!</p>";
     }
     else if(count($means) == 0){
-        echo"<p>Please chose at least one means of transport.</p>";
+        echo"<p>But first please chose at least one means of transport if you don't want to walk.</p>";
     }
     else if($cityFrom == "San Diego" && $cityTo == "Los Angeles" && in_array("train",$means) && count($means) == 1){
-        echo "<p>There is no way to go from $cityFrom to $cityTo with the selected means of transport.</p>";
+        echo "<p>There is no way to reach the destination with the selected means of transport.</p>";
     }
     else{
         foreach($mappa as $from => $toArray){
@@ -139,16 +140,20 @@
         list($distances, $prev) = $g->paths_from($cityFrom);
         $path = $g->paths_to($prev, $cityTo);
         if(count($path) == 0){
-            echo "<p>There is no way to go from $cityFrom to $cityTo with the selected means of transport.</p>";
+            echo "<p>There is no way to reach the destination with the selected means of transport.</p>";
         }
         else{
-            echo "<p>The $pathPreference path to go from " . $cityFrom . " to " . $cityTo . "is:</p>";
-            echo "<ul>";
+            if($pathPreference == "time")
+                echo "<p>Fastest itinerary:</p>";
+            else if($pathPreference == "distance")
+                echo "<p>Shortest itinerary:</p>";
+            else
+                echo "<p>Cheapest itinerary:</p>";
             $costo = 0; $tempo = 0; $miglia = 0;
             $c1 = $path[0];
             $c2 = $path[1];
             foreach($mappa[$c1][$c2] as $mean => $values){
-                echo "<li>$c1 to $c2 with $mean: ". $values["cost"] . "$, " . $values["time"] ." min</li>";
+                echo '<div class="box">'.'<p><img class="meanLogo" src="'.$mean.'.svg">'.$c1.' to '.$c2.' by '.$mean.': '. $values["cost"] . '$, '.$values["time"].' minutes</p></div> <br>';;
                 $costo += $values["cost"];
                 $tempo += $values["time"];
                 $miglia += $values["distance"];
@@ -157,14 +162,13 @@
                 $c1 = $path[$i];
                 $c2 = $path[$i+1];
                 foreach($mappa[$c1][$c2] as $mean => $values){
-                    echo "<li>$c1 to $c2 with $mean: ". $values["cost"] . "$, " . $values["time"] ." min</li>";
+                    echo '<div class="box">'.'<p><img class="meanLogo" src="'.$mean.'.svg">'.$c1.' to '.$c2.' by '.$mean.': '. $values["cost"] . '$, '.$values["time"].' minutes</p></div><br>';
                     $costo += $values["cost"];
                     $tempo += $values["time"];
                     $miglia += $values["distance"];
                 }
             }
-            echo "</ul>";
-            echo "<p>Total cost: $costo$, Total time: $tempo min.</p>";
+            echo "<p><mark class=\"tag\">Total</mark> $costo$, $tempo minutes.</p>";
         }
         
     }

@@ -1,0 +1,58 @@
+header{
+    background-color:#EACD65;
+    height: 4.5em;
+    border-bottom: 2px solid #E54142;
+}
+#logoImg{
+    height: 4.3em;
+}
+.cities{
+    background-color: #EACD65;
+    position: absolute;
+    top: 1.3em;left: 12.5em;
+    background-color: #E54142;
+    color: white;
+    font-size: 1em;
+    font-family:Georgia;
+    height: 3em;
+    text-transform:none;
+    padding-top: 0.2em;
+}
+.meanLogo{
+    vertical-align: middle;
+    height: 3.5em;
+    width: 3.5em;
+}
+.headerButton{
+    background-color: #EACD65;
+    position: absolute;
+    top: 0.1em;
+    border: 2px solid #E54142;
+}
+hr{ 
+  
+    border:         none;
+    border-left:    1px solid hsla(200, 10%, 50%,100);
+    height:         87vh;
+    width:          1px;    
+}
+
+h1{
+    background-color: #EACD65;
+    border: 3px solid #E54142;
+    color: #E54142;
+    font-family: Georgia;
+    text-align: center;
+    padding-bottom: 0.2em;
+}
+.box{
+    display: flex;
+   align-items:center;
+}
+.tag{
+    background-color: #EACD65;
+    color: #E54142;
+}
+p{
+    font-size: 1.5em;
+}
